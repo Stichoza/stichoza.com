@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "bootstrap-styl": "^5.0.8"
+  },
+  "devDependencies": {
+    "coffee-script": "latest",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-coffee": "^3.0.2",
+    "gulp-ignore": "^2.0.2",
+    "gulp-jade": "^1.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.4"
+  }
+}
