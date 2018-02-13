@@ -9,6 +9,7 @@ minifycss    = require 'gulp-minify-css'
 notify       = require 'gulp-notify'
 plumber      = require 'gulp-plumber'
 rename       = require 'gulp-rename'
+server       = require 'gulp-server-livereload'
 sourcemaps   = require 'gulp-sourcemaps'
 stylus       = require 'gulp-stylus'
 uglify       = require 'gulp-uglify'
@@ -62,6 +63,12 @@ gulp.task 'watch', ->
   gulp.watch 'resources/jade/**/*', ['jade']
   return
 
+gulp.task 'webserver', ->
+  gulp.src 'public'
+    .pipe server
+      livereload: yes
+      open: yes
+
 gulp.task 'build', ['scripts', 'styles', 'jade'], ->
 
-gulp.task 'default', ['watch', 'build'], ->
+gulp.task 'default', ['webserver', 'watch', 'build'], ->
