@@ -2,9 +2,9 @@ autoprefixer = require 'gulp-autoprefixer'
 bootstrap    = require 'bootstrap-styl'
 coffee       = require 'gulp-coffee'
 gulp         = require 'gulp'
-gutil        = require 'gulp-util'
 ignore       = require 'gulp-ignore'
 jade         = require 'gulp-jade'
+log          = require 'fancy-log'
 minifycss    = require 'gulp-minify-css'
 notify       = require 'gulp-notify'
 plumber      = require 'gulp-plumber'
@@ -18,7 +18,7 @@ gulp.task 'styles', ->
     .pipe plumber
       errorHandler: notify.onError 'Error: <%= error.message %>'
     .pipe ignore.exclude '**/_*.styl'
-    .on 'error', gutil.log
+    .on 'error', log
     .pipe stylus
       use: bootstrap()
     .pipe autoprefixer 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'
@@ -42,7 +42,7 @@ gulp.task 'scripts', ->
     .pipe plumber
       errorHandler: notify.onError 'Error: <%= error.message %>'
     .pipe coffee()
-    .on 'error', gutil.log
+    .on 'error', log
     .pipe uglify()
     .pipe rename
       suffix: '.min'
@@ -53,7 +53,7 @@ gulp.task 'jade', ->
     .pipe plumber
       errorHandler: notify.onError 'Error: <%= error.message %>'
     .pipe jade()
-    .on 'error', gutil.log
+    .on 'error', log
     .pipe gulp.dest 'public'
 
 gulp.task 'watch', ->
