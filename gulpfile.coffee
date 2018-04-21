@@ -13,6 +13,7 @@ server       = require 'gulp-server-livereload'
 sourcemaps   = require 'gulp-sourcemaps'
 stylus       = require 'gulp-stylus'
 uglify       = require 'gulp-uglify'
+concat       = require 'gulp-concat'
 
 gulp.task 'styles', ->
   gulp.src 'resources/stylus/**/*.styl'
