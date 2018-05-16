@@ -12,15 +12,16 @@ html(lang='en')
         h1 Hi! I'm 
           strong Stichoza
         h2 A Full-Stack Web Developer
+      .magic-mouse
 
     #about.about.section
       .container
         .row
           .col-sm-6.col-md-4.col-md-offset-1
-            img.img-responsive(src='images/stichoza.jpeg', alt='')
+            img.img-responsive(src='images/stichoza.jpeg', alt='Stichoza')
           .col-sm-6.col-md-5.col-md-offset-1
             h3 A short info about me
-            p I'm Levan. I am a web developer and a citizen of Planet Earth. I create webapps, websites and web-everything with passion.
+            p I'm Stichoza. I am a web developer and a citizen of Planet Earth. I create webapps, websites and web-everything with passion.
             p I love developing with #[strong Laravel Framework], PHP. And #[strong Node.js] is also something I enjoy.
             p My hobbies include photography, travelling, ecotourism and all kinds of outdoor activities combined with extreme sports.
 
@@ -28,8 +29,14 @@ html(lang='en')
       .container
         .row
           .col-md-8.col-md-offset-2
+
             h3.text-center Still about me
               small.text-uppercase But more technically (a.k.a Resume)
+
+            p I started to code in my high-school youth. From then I'm learning new things and doing some cool shit.
+            p My friends and I founded the very first dev community around Google products which later became an official Google Developers Group in Georgia - #[a(href="https://www.facebook.com/gdgtbilisi/", rel="nofollow", target="_blank") GDG Tbilisi].
+            p After several years we founded #[a(href="https://www.facebook.com/unihackge/", rel="nofollow", target="_blank") uniHack] and organized hackathons for students. We became partners with #[a(href="https://mlh.io", rel="nofollow", target="_blank") MLH] and several other awesome organizations.
+            p I'm also very proud to be a member of #[a(href="https://github.com/orgs/nodejs/people" rel="nofollow", target="_blank") Node.js Foundation] and a contributor of open-source world.
 
             h4.text-center Education
 
@@ -54,16 +61,13 @@ html(lang='en')
 
             dl.dl-horizontal
               dt 2016 - Present
-              dd #[strong AdvertWise] - Full-stack Web Developer
+              dd #[strong AdvertWise] - Head of Web Development
             dl.dl-horizontal
               dt 2015 - 2016
               dd #[strong APP3null GmbH] - Full-stack Web Developer
             dl.dl-horizontal
               dt 2014
               dd #[strong AzRy] - Software Developer
-            dl.dl-horizontal
-              dt 2013 - Present
-              dd #[strong uniHack] - Co-Founder, Speaker
             dl.dl-horizontal
               dt 2012 - 2013
               dd #[strong Ministry of Sport and Youth Affairs] - Web and Mobile Developer
@@ -72,15 +76,9 @@ html(lang='en')
 
             dl.dl-horizontal
               dt April - May 2014
-              dd #[strong CodeSchool] - Completed #[strong 13] Courses including:
-                ul
-                  li Real-time Web with Node.js
-                  li JavaScript Road Trip (I, II, III)
-                  li CoffeeScript
-                  li CSS Cross-Country
-                  li Front-end Formations
-                  li Fundamentals of Design
-                  li Journey Into Mobile
+              dd #[strong CodeSchool] - Completed #[strong 13] Courses including: 
+                p
+                  small.text-muted CoffeeScript, Real-time Web with Node.js, JavaScript Road Trip (I, II, III), etc.
             dl.dl-horizontal
               dt May 2014 
               dd #[strong Princeton University] Coursera: Algorithms
@@ -97,7 +95,7 @@ html(lang='en')
               dt Operating Systems
               dd Using Apple macOS, loving GNU/Linux
             dl.dl-horizontal
-              dt Graphical Design
+              dt Graphic Design
               dd Sketch, Adobe stack (Photoshop, Illustrator, Flash)
             dl.dl-horizontal
               dt In &hearts; With
@@ -110,20 +108,71 @@ html(lang='en')
       .container
         .row
           .col-md-10.col-md-offset-1
-            h4.text-center I'm proud to have collaborated with some awesome companies
+            h3 My recent work
+            p I'm proud to have collaborated with some awesome companies and agencies while working as a freelancer or a contractor.
             .row.grid-companies
               .col-sm-3.col-xs-6
-                  img(src="images/circle.png", alt="Circle")
+                a(href="https://www.circle.ge/en", rel="nofollow", target="_blank")
+                  img(src="images/companies/circle.png", alt="Circle")
               .col-sm-3.col-xs-6
-                  img(src="images/wearede.png", alt="WeAreDe")
+                a(href="https://wearede.com", rel="nofollow", target="_blank")
+                  img(src="images/companies/wearede.png", alt="WeAreDe")
               .col-sm-3.col-xs-6
-                  img(src="images/advertwise.png", alt="AdvertWise")
+                a(href="http://advertwise.ge", rel="nofollow", target="_blank")
+                  img(src="images/companies/advertwise.png", alt="AdvertWise")
               .col-sm-3.col-xs-6
-                  img(src="images/app3null.png", alt="APP3null")
+                a(href="https://app3null.com", rel="nofollow", target="_blank")
+                  img(src="images/companies/app3null.png", alt="APP3null")
 
-            h3 My recent work
+            p Here is a list of some projects, websites and whatever I have built with love in past several years. Some of them are confidential, some of them are public.
+            
+            -
+              var works = [
+                { id: 'gyla', color: '#2B6EB2', title: 'GYLA', text: 'Created a website for Georgian Young Lawyers\' Association.'},
+                { id: 'pamparam', color: '#9B59B6', title: 'Pamparam', text: 'Created back-end software for Pamparam start-up using many different technologies and frameworks. Developed sophisticated system for ad watching platform.'},
+                { id: 'spoint', color: '#394E60', title: 'SmartPoint CMS', text: 'Developed a custom CMS on top of Laravel framework for Circle LLC.'},
+                { id: 'business-upgrade', color: '#2393CE', title: 'Business Upgrade', text: 'Developed a landing page and a registration form for business training.'},
+                { id: 'ogplus', color: '#3B3639', title: 'OptimalGroup+', text: 'Created a CMS type website and complaint/appeal management tool for OptimalGroup+.'},
+                { id: 'likegeorgia', color: '#E27A35', title: 'LikeGeorgia', text: 'Developed a full-featured website for travel agency LikeGeorgia. Hotel booking and creating custom adventure tours online. Also developed a management system for staff.'},
+                { id: 'smarthouse', color: '#C8102D', title: 'SmartHouse', text: 'Built a website and an online catalog for home automation company SmartHouse.'},
+                { id: 'savgroup', color: '#4A7A93', title: 'SAV Group', text: 'Apartment booking management system for SAV Group.'},
+                { id: 'agrotech', color: '#ABCB58', title: 'AgroTECH', text: 'Developed a CMS type website for pesticides importer company.'},
+                { id: 'gmc', color: '#CCB15A', title: 'Georgian Metrology Center', text: ' '},
+                { id: 'zi', color: '#29ACD3', title: 'ZI', text: 'Created an internal software front-end for a Bank Standard (Azerbaijan).'},
+                { id: 'ecaz', color: '#363636', title: 'ECAZ', text: 'Created a langing page website for a team of designers in Azerbaijan.'},
+                { id: 'supermaster', color: '#FBB93E', title: 'SuperMaster', text: ' '},
+                { id: 'soulmama-web', color: '#606D66', title: 'SoulMama Band Website', text: ' '},
+                { id: 'soulmama-html5', color: '#3D96CA', title: 'SoulMama', text: 'Cross-browser responsive and time-based interactive page with HTML5 audio and nice CSS3 animations.'},
+                { id: 'monkey-business', color: '#8FC637', title: 'Monkey Business', text: 'A simple game for iOS (iPhone &amp; iPad). Game is not yep published, because I left the job where I was developing this.'},
+                { id: 'minimali', color: '#C81220', title: 'Minimali Online Shop', text: 'Online shop and Facebook application for Minimali Shop. Website and application is not available as the company is shut down.'},
+                { id: 'aztec-checkers', color: '#D6AC42', title: 'Aztec Checkers', text: 'Developed a back-end software for multiplayer game. Aztec Checkers is a brain game for Android &amp; iOS.'},
+                { id: 'aiki', color: '#5A86B5', title: 'Georgian Competitive Aikido Association', text: 'This was the first serious project I have done. I was 15 years old, I was learning PHP by myself and by the way doing this project. There is nothing secial in this website, it doesn\'t even use any database and it\'s based on filesystem data storing, but it works flawlessly for already 9 years.'},
+              ];
+              var doubles = [];
+            
+            .row.portfolio-items
+              each item, i in works
+                div(class=doubles.indexOf(i) > -1 ? "col-sm-6 col-md-8 portfolio-item" : "col-sm-6 col-md-4 portfolio-item")
+                  a.item-link(href="#" style="background-image:url(images/works/#{item.id}/#{item.id}-placeit-md.jpg)")
+                    .color-overlay(style="background-color:"+item.color)
+                    h5.title= item.title
+                    p.text= item.text
 
-            p (coming soon)
+            h4 Talks by me
+            p Here are some of the speeches I gave at hackathons and meetups.
+
+            -
+              var talks = [
+                { id: 'spark', title: 'Laravel Spark', link: 'https://speakerdeck.com/stichoza/laravel-spark', description: '' },
+                { id: 'd3', title: 'D3.js - Data-Driven Documents', link: 'https://speakerdeck.com/stichoza/d3-dot-js-data-driven-documents', description: '' },
+                { id: 'gulp', title: 'Gulp - The Streaming Build System', link: 'https://speakerdeck.com/stichoza/gulp-the-streaming-build-system', description: '' },
+                { id: 'devtools', title: 'Mester of DevTools', link: 'https://speakerdeck.com/stichoza/master-of-devtools', description: '' },
+              ];
+
+            .row.talk-items
+              each item in talks
+                a.col-sm-6.col-md-3.talk-item(href=item.link, rel="nofollow", target="_blank")
+                    img.img-responsive(src="images/slides/#{item.id}.jpg", alt="#{item.title}")
 
     #contact.contact.section
       .container

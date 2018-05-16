@@ -5,6 +5,9 @@ $font-family-serif = $font-family-sans-serif
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,600')
 
+.animated
+  transition .3s ease all
+
 .header
   position relative
   height 100vh
@@ -29,6 +32,28 @@ $font-family-serif = $font-family-sans-serif
       letter-spacing 8px
       padding-left 4px
       @extend .text-uppercase
+
+.magic-mouse
+  position absolute
+  bottom 40px
+  left 50%
+  margin-left -18px
+  left 50%
+  opacity 1
+  border 3px solid #fff
+  width 38px
+  height 56px
+  border-radius 16px/25px
+  &:after
+    content ""
+    display block
+    border 2px solid #fff
+    border-radius 5px
+    width 0px
+    height 8px
+    position relative
+    left 14px
+    top 5px
 
 .section
   padding 100px 0
@@ -56,7 +81,7 @@ $font-family-serif = $font-family-sans-serif
   // Styles here
 
 .resume
-  background rgba(#ccc, 1/5)
+  background rgba(#ccc, .2)
   h4
     margin 45px 0 40px
   dl
@@ -65,15 +90,72 @@ $font-family-serif = $font-family-sans-serif
 
 .portfolio
   .grid-companies
-    margin 60px 0
+    margin 30px 0
     & > div
       margin 20px 0
       @extend .text-center
     img
       height 40px
+  .portfolio-items
+    margin-top 40px
+  .portfolio-item
+    .color-overlay
+      @extend .animated
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      opacity 0
+      &:after
+        @extend .animated
+        display block
+        content ""
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        height 50%
+        background linear-gradient(0deg, rgba(#000, .8) 0%, rgba(#000, 0) 100%)
+    .item-link
+      position relative
+      display block
+      // height 295px
+      padding 75% 0 0
+      margin-bottom 30px
+      background-position center
+      background-size cover
+      box-shadow 0 5px 20px rgba(#000, .15)
+      .title
+        @extend .animated
+        line-height 1.2
+        position absolute
+        margin 0
+        bottom 8px
+        left 20px
+        color #fff
+        opacity 0
+        font-size 18px
+      .text
+        display none
+      &:hover
+        .color-overlay
+          opacity .7
+        .title
+          opacity 1
+          bottom 18px
+  .talk-items
+    margin-top 20px
+  .talk-item
+    @extend .animated
+    display block
+    img
+      box-shadow 0 5px 25px rgba(#000, .1)
+    &:hover
+      transform scale(1.05)
 
 .contact
-  background rgba(#000, .3)
+  background rgba(#ccc, .2)
 
 // Print version
 @media print
