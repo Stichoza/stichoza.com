@@ -21,7 +21,7 @@ html(lang='en')
             img.img-responsive(src='images/stichoza.jpeg', alt='Stichoza')
           .col-sm-6.col-md-5.col-md-offset-1
             h3 A short info about me
-            p I'm Stichoza. I am a web developer and a citizen of Planet Earth. I create webapps, websites and web-everything with passion.
+            p I'm Levan (aka Stichoza). I am a web developer and a citizen of Planet Earth. I create webapps, websites and web-everything with passion.
             p I love developing with #[strong Laravel Framework], PHP. And #[strong Node.js] is also something I enjoy.
             p My hobbies include photography, travelling, ecotourism and all kinds of outdoor activities combined with extreme sports.
 
@@ -172,12 +172,28 @@ html(lang='en')
             .row.talk-items
               each item in talks
                 a.col-sm-6.col-md-3.talk-item(href=item.link, rel="nofollow", target="_blank")
-                    img.img-responsive(src="images/slides/#{item.id}.jpg", alt="#{item.title}")
+                  img.img-responsive(src="images/slides/#{item.id}.jpg", alt="#{item.title}")
 
     #contact.contact.section
       .container
         .row
           .col-md-10.col-md-offset-1
             h3 Contact me
+            ul.list-inline
+              li
+                a(href="mailto:me@stichoza.com") email
+              li
+                a(href="https://t.me/stichoza", rel="nofollow", target="_blank") telegram
+              li
+                a(href="https://github.com/Stichoza", rel="nofollow", target="_blank") github
+              li
+                a(href="https://twitter.com/Stichoza", rel="nofollow", target="_blank") twitter
+              li
+                a(href="https://instagram.com/stichoza", rel="nofollow", target="_blank") instagram
 
+    #footer.footer.section
+      .container
+        .text-center
+          p Copyright © 2018 Stichoza, All rights Reserved. 
+          p Created by me
 

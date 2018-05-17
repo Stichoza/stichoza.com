@@ -107,8 +107,10 @@ $font-family-serif = $font-family-sans-serif
       bottom 0
       left 0
       opacity 0
+      border-radius 2px
       &:after
         @extend .animated
+        border-radius 2px
         display block
         content ""
         position absolute
@@ -118,6 +120,7 @@ $font-family-serif = $font-family-sans-serif
         height 50%
         background linear-gradient(0deg, rgba(#000, .8) 0%, rgba(#000, 0) 100%)
     .item-link
+      border-radius 2px
       position relative
       display block
       // height 295px
@@ -151,11 +154,21 @@ $font-family-serif = $font-family-sans-serif
     display block
     img
       box-shadow 0 5px 25px rgba(#000, .1)
+      border-radius 2px
     &:hover
       transform scale(1.05)
 
 .contact
   background rgba(#ccc, .2)
+
+.footer
+  padding 50px 0
+  background-color #000
+  &, p
+    color #aaa
+    font-size 12px
+    line-height 1.1
+    font-weight 300
 
 // Print version
 @media print
