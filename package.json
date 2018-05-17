@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "bootstrap-styl": "^5.0.8",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-images-convert": "^1.0.1",
     "jquery": "^3.3.1",
     "rangeslider.js": "^2.3.2"
   },
