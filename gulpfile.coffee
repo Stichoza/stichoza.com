@@ -1,6 +1,7 @@
 autoprefixer = require 'gulp-autoprefixer'
 bootstrap    = require 'bootstrap-styl'
 coffee       = require 'gulp-coffee'
+concat       = require 'gulp-concat'
 gulp         = require 'gulp'
 ignore       = require 'gulp-ignore'
 jade         = require 'gulp-jade'
@@ -13,7 +14,6 @@ server       = require 'gulp-server-livereload'
 sourcemaps   = require 'gulp-sourcemaps'
 stylus       = require 'gulp-stylus'
 uglify       = require 'gulp-uglify'
-concat       = require 'gulp-concat'
 
 gulp.task 'styles', ->
   gulp.src 'resources/stylus/**/*.styl'
@@ -58,10 +58,15 @@ gulp.task 'jade', ->
     .on 'error', log
     .pipe gulp.dest 'public'
 
+gulp.task 'images', ->
+  gulp.src 'resources/images/**'
+    .pipe gulp.dest 'public/images'
+
 gulp.task 'watch', ->
   gulp.watch 'resources/stylus/**/*', ['styles']
   gulp.watch 'resources/coffee/**/*', ['scripts']
   gulp.watch 'resources/jade/**/*', ['jade']
+  gulp.watch 'resources/images/**/*', ['images']
   return
 
 gulp.task 'webserver', ->
@@ -70,6 +75,6 @@ gulp.task 'webserver', ->
       livereload: yes
       open: yes
 
-gulp.task 'build', ['scripts', 'styles', 'jade'], ->
+gulp.task 'build', ['scripts', 'styles', 'jade', 'images'], ->
 
 gulp.task 'default', ['webserver', 'watch', 'build'], ->
