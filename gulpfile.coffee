@@ -12,6 +12,7 @@ minifycss    = require 'gulp-minify-css'
 notify       = require 'gulp-notify'
 plumber      = require 'gulp-plumber'
 rename       = require 'gulp-rename'
+resize       = require 'gulp-image-resize'
 server       = require 'gulp-server-livereload'
 sourcemaps   = require 'gulp-sourcemaps'
 stylus       = require 'gulp-stylus'
@@ -95,37 +96,50 @@ gulp.task 'images', ->
     .pipe plumber
       errorHandler: notify.onError 'Error: <%= error.message %>'
     .on 'error', log
+    .pipe resize
+      width: 640
+      upscale: no
     .pipe imagemin()
     .pipe gulp.dest 'public/images/slides'
   
   # Portfolio images
 
   # Covers
-  gulp.src 'resources/images/works/**/*.*'
+  # gulp.src 'resources/images/works/**/*.*'
+  #   .pipe plumber
+  #     errorHandler: notify.onError 'Error: <%= error.message %>'
+  #   .on 'error', log
+  #   .pipe convert targetType: 'jpg'
+  #   .pipe rename extname: '.jpg'
+  #   .pipe imagemin()
+  #   .pipe gulp.dest 'public/images/works'
+
+  # Covers
+  gulp.src 'resources/images/works/**/cover.*'
     .pipe plumber
       errorHandler: notify.onError 'Error: <%= error.message %>'
     .on 'error', log
+    .pipe resize
+      width: 640
+      upscale: no
     .pipe convert targetType: 'jpg'
     .pipe rename extname: '.jpg'
     .pipe imagemin()
     .pipe gulp.dest 'public/images/works'
 
-  # # Covers
-  # gulp.src 'resources/images/works/**/cover.*'
-  #   .pipe plumber
-  #     errorHandler: notify.onError 'Error: <%= error.message %>'
-  #   .on 'error', log
-  #   .pipe imagemin()
-  #   .pipe gulp.dest 'public/images/works'
-
-  # # Screenshots
-  # gulp.src 'resources/images/works/**/*'
-  #   .pipe plumber
-  #     errorHandler: notify.onError 'Error: <%= error.message %>'
-  #   .pipe ignore.exclude '**/cover.*'
-  #   .on 'error', log
-  #   .pipe imagemin()
-  #   .pipe gulp.dest 'public/images/works'
+  # Screenshots
+  gulp.src 'resources/images/works/**/*.*'
+    .pipe plumber
+      errorHandler: notify.onError 'Error: <%= error.message %>'
+    .pipe ignore.exclude '**/cover.*'
+    .on 'error', log
+    .pipe resize
+      width: 960
+      upscale: no
+    .pipe convert targetType: 'jpg'
+    .pipe rename extname: '.jpg'
+    .pipe imagemin()
+    .pipe gulp.dest 'public/images/works'
 
 #
 # Watch files
@@ -153,4 +167,4 @@ gulp.task 'build', ['scripts', 'styles', 'jade', 'images'], ->
 #
 # Default task
 #
-gulp.task 'default', ['webserver', 'watch', 'build'], ->
+gulp.task 'default', ['watch', 'build', 'webserver'], ->

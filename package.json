@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap-styl": "^5.0.8",
+    "gulp-image-resize": "^0.13.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-images-convert": "^1.0.1",
     "jquery": "^3.3.1",
